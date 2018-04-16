@@ -1,0 +1,13 @@
+{
+  "name": "xterm-webfont",
+  "version": "1.0.0",
+  "description": "xterm.js addon for ensuring webfonts load",
+  "main": "index.js",
+  "author": "Vincent Woo <vincent@coderpad.io>",
+  "repository": "CoderPad/xterm-webfont",
+  "homepage": "https://github.com/CoderPad/xterm-webfont",
+  "license": "ISC",
+  "dependencies": {
+    "fontfaceobserver": "2.*"
+  }
+}
