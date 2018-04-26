@@ -4,10 +4,11 @@ xterm-webfont is an [xterm.js](https://github.com/xtermjs/xterm.js) addon for en
 
 # Usage
 
-xterm-webfont is an ES6 module available on NPM or Yarn. Install it and import (or require) it like so:
+xterm-webfont is a CommonJS module available on NPM or Yarn. Install it and import (or require) it like so:
 
 ```js
 import * as WebfontLoader from 'xterm-webfont'
+// alternatively, var WebfontLoader = require('xterm-webfont')
 Terminal.applyAddon(WebfontLoader)
 ```
 

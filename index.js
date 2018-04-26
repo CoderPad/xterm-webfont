@@ -1,20 +1,26 @@
-import FontFaceObserver from 'fontfaceobserver'
+var FontFaceObserver = require('fontfaceobserver')
 
-export function apply(terminalConstructor) {
-  terminalConstructor.prototype.loadWebfontAndOpen = function(element) {
-    const regular = new FontFaceObserver(this.options.fontFamily).load()
-    const bold = new FontFaceObserver(this.options.fontFamily, { weight: 'bold' }).load()
+module.exports = {
+  apply: function(terminalConstructor) {
+    terminalConstructor.prototype.loadWebfontAndOpen = function(element) {
+      var _this = this
 
-    return regular.constructor.all([regular, bold]).then(
-      () => {
-        this.open(element)
-        return this
-      },
-      () => {
-        this.options.fontFamily = 'Courier'
-        this.open(element)
-        return this
-      }
-    )
+      var regular = new FontFaceObserver(this.options.fontFamily).load()
+      var bold = new FontFaceObserver(this.options.fontFamily, {
+        weight: 'bold'
+      }).load()
+
+      return regular.constructor.all([regular, bold]).then(
+        function() {
+          _this.open(element)
+          return _this
+        },
+        function() {
+          _this.options.fontFamily = 'Courier'
+          _this.open(element)
+          return _this
+        }
+      )
+    }
   }
 }
