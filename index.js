@@ -5,10 +5,9 @@ module.exports = {
     terminalConstructor.prototype.loadWebfontAndOpen = function(element) {
       var _this = this
 
-      var regular = new FontFaceObserver(this.options.fontFamily).load()
-      var bold = new FontFaceObserver(this.options.fontFamily, {
-        weight: 'bold'
-      }).load()
+      var fontFamily = this.getOption('fontFamily')
+      var regular = new FontFaceObserver(fontFamily).load()
+      var bold = new FontFaceObserver(fontFamily, { weight: 'bold' }).load()
 
       return regular.constructor.all([regular, bold]).then(
         function() {

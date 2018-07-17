@@ -1,6 +1,6 @@
 {
   "name": "xterm-webfont",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "xterm.js addon for ensuring webfonts load",
   "main": "index.js",
   "author": "Vincent Woo <vincent@coderpad.io>",
