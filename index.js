@@ -15,7 +15,7 @@ module.exports = {
           return _this
         },
         function() {
-          _this.options.fontFamily = 'Courier'
+          _this.setOption('fontFamily', 'Courier')
           _this.open(element)
           return _this
         }
