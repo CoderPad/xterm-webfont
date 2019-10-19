@@ -4,25 +4,27 @@ xterm-webfont is an [xterm.js](https://github.com/xtermjs/xterm.js) addon for en
 
 # Usage
 
+The current (2.x) version of xterm-webfont is compatible with xterm.js 4.0 and later. Check the git history of this file for older usage.
+
 xterm-webfont is a CommonJS module available on NPM or Yarn. Install it and import (or require) it like so:
 
 ```js
-import * as WebfontLoader from 'xterm-webfont'
+import { Terminal } from 'xterm'
+import * as XtermWebfont from 'xterm-webfont'
 // alternatively, var WebfontLoader = require('xterm-webfont')
-Terminal.applyAddon(WebfontLoader)
+const term = new Terminal({ fontFamily: 'Roboto Mono' })
+term.loadAddon(new XtermWebfont())
 ```
 
 Then, where you would normally initialize xterm like so:
 
 ```js
-const term = new Terminal({ fontFamily: 'Roboto Mono' })
 term.open(myElement)
 ```
 
 do
 
 ```js
-const term = new Terminal({ fontFamily: 'Roboto Mono' })
 term.loadWebfontAndOpen(myElement)
 ```
 
